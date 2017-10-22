@@ -1,8 +1,5 @@
-#index:
-#    path: /
-#    defaults: { _controller: 'App\Controller\DefaultController::index' }
-
-# first, run composer req annotations
-#controllers:
-#    resource: ../src/Controller/
-#    type: annotation
+home:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: home.html.twig

@@ -24,6 +24,11 @@
       </div>
       #}
       <div class="row">
+        <div class="col-md-12">
+          {% include('_flashes.html.twig') %}
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-8">
           <div id="content" class="clearfix">
             {% block content %}{% endblock %}
