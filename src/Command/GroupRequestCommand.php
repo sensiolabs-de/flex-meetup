@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Workflow\Exception\LogicException;
 
 class GroupRequestCommand extends ContainerAwareCommand
 {
@@ -111,16 +112,17 @@ class GroupRequestCommand extends ContainerAwareCommand
 
     private function processGroup(GroupRequest $group): bool
     {
-        $status = $this->io->choice(
+        $transition = $this->io->choice(
             sprintf('What to do with "<comment>%s</comment>"?', $group->getUrlname()),
             ['skip', 'approve', 'reject']
         );
 
-        if ('skip' === $status) {
+        if ('skip' === $transition) {
             return false;
         }
 
-        $group->setStatus($status);
+
+        $this->getContainer()->get('workflow.group_request')->apply($group, $transition);
 
         $this->getContainer()->get('doctrine')->getManager()->flush();
 

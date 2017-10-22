@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "05ad1a0b09ffded4755f41de83c1cca5",
+    "content-hash": "a57e0f4e85a315a3dc1fcd674c3dfe28",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -4702,6 +4702,73 @@
             "description": "Symfony WebServerBundle",
             "homepage": "https://symfony.com",
             "time": "2017-08-22T16:06:26+00:00"
+        },
+        {
+            "name": "symfony/workflow",
+            "version": "v3.4.0-BETA1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/workflow.git",
+                "reference": "9be01bc49cce8ed314708fb8233a393d2427cb52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/workflow/zipball/9be01bc49cce8ed314708fb8233a393d2427cb52",
+                "reference": "9be01bc49cce8ed314708fb8233a393d2427cb52",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/property-access": "~2.3|~3.0|~4.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/dependency-injection": "~2.8|~3.0|~4.0",
+                "symfony/event-dispatcher": "~2.1|~3.0|~4.0",
+                "symfony/expression-language": "~2.8|~3.0|~4.0",
+                "symfony/security-core": "~2.8|~3.0|~4.0",
+                "symfony/validator": "~2.8|~3.4|~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Workflow\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                }
+            ],
+            "description": "Symfony Workflow Component",
+            "homepage": "http://symfony.com",
+            "keywords": [
+                "petrinet",
+                "place",
+                "state",
+                "statemachine",
+                "transition",
+                "workflow"
+            ],
+            "time": "2017-10-06T15:47:04+00:00"
         },
         {
             "name": "symfony/yaml",

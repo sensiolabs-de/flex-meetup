@@ -60,10 +60,14 @@ class GroupController extends Controller
      */
     public function confirmRequestAction(GroupRequest $groupRequest): RedirectResponse
     {
-        $groupRequest->setStatus(GroupRequest::STATUS_CONFIRMED);
+        try {
+            $this->get('workflow.group_request')->apply($groupRequest, 'confirm');
 
-        $this->getDoctrine()->getManager()->flush();
-        $this->addFlash('success', 'Group request was confirmed and will be reviewed. This may take a few days.');
+            $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Group request was confirmed and will be reviewed. This may take a few days.');
+        } catch (LogicException $exception) {
+            $this->addFlash('danger', 'Could not confirm group request: '.$exception->getMessage());
+        }
 
         return $this->redirectToRoute('home');
     }

@@ -22,6 +22,7 @@
         "symfony/twig-bundle": "^3.4",
         "symfony/validator": "^3.4",
         "symfony/web-server-bundle": "^3.4",
+        "symfony/workflow": "^3.4",
         "symfony/yaml": "^3.4"
     },
     "require-dev": {
