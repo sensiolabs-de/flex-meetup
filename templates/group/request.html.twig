@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Group Request</h1>
+    <p>Fill out the form</p>
+    {{ form_start(request_form) }}
+        {{ form_widget(request_form) }}
+        <input type="submit" value="Save" class="btn btn-primary pull-right"/>
+    {{ form_end(request_form) }}
+{% endblock %}

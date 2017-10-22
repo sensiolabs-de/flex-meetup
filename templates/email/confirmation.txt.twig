@@ -1,0 +1,10 @@
+Hello {{ group_request.name }},
+
+please confirm your mail address:
+{{ url('group_request_confirmation', {'token': group_request.token}) }}
+
+Thanks!
+
+===========================================
+
+Automated e-mail by user group radar

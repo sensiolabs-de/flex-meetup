@@ -1,0 +1,21 @@
+<div class="meetup-list">
+    {% for event in events %}
+        <div class="meetup-event clearfix">
+            <div class="meetup-datetime pull-left text-center">
+                <span class="meetup-day">{{ event.time|date('d') }}</span>
+                <span class="meetup-month">{{ event.time|date('F') }}</span>
+                <span class="meetup-time">{{ event.time|date('H.i') }}</span>
+            </div>
+            <span class="meetup-usergroup">
+                    <a href="{{ path('group', {'urlname': event.group.urlname}) }}">{{ event.group.name }}</a>
+                </span>
+            <h2 class="meetup-title">
+                <a href="{{ path('event', {'urlname': event.group.urlname, 'eventId': event.id}) }}">{{ event.name }}</a>
+            </h2>
+            <span class="meetup-attendees">{{ event.yesRsvpCount }} going</span>
+            <a href="{{ path('event', {'urlname': event.group.urlname, 'eventId': event.id}) }}" class="btn btn-default pull-right">Details</a>
+        </div>
+    {% else %}
+        There are no upcoming events.
+    {% endfor %}
+</div>

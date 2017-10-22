@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title 'User Group Radar' %}</title>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+        <a class="navbar-brand" href="{{ path('home') }}">User Group Radar</a>
+        {#
+        <a class="btn btn-primary pull-right" href="{{ path('group_request') }}">Submit User Group</a>
+        #}
+      </nav>
+      {#
+      <div class="row">
+        <div class="col-md-12">
+          {% include('_flashes.html.twig') %}
+        </div>
+      </div>
+      #}
+      <div class="row">
+        <div class="col-md-8">
+          <div id="content" class="clearfix">
+            {% block content %}{% endblock %}
+          </div>
+          {% if block('additional_content') is defined %}
+            <div id="additional-content" class="clearfix">
+              {{ block('additional_content') }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="col-md-4">
+          <div id="sidebar" class="clearfix">
+            {% block sidebar %}{% endblock %}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <footer class="text-muted">
+            SymfonyLive Berlin 2017
+            <span class="pull-right">photo credits: <a href="http://pexels.com/u/negativespace">pexels.com/u/negativespace</a> (License: CC0)</span>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

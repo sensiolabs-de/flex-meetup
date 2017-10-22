@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+  <h1>Upcoming Meetups</h1>
+  <p>Put a list of upcoming events here.</p>
+  {#
+  {{ render(controller('App\\Controller\\EventController::listAction')) }}
+  #}
+{% endblock %}
+
+{% block sidebar %}
+  <h2>Featured User Groups</h2>
+  <p>Put a list of featured groups here.</p>
+  {#
+  {{ render(controller('App\\Controller\\GroupController::listAction')) }}
+  #}
+{% endblock %}

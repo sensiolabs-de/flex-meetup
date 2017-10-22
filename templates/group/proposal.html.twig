@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Talk Proposal</h1>
+    <p>Fill out the form</p>
+    {{ form_start(proposal_form) }}
+        {{ form_widget(proposal_form) }}
+        <input type="submit" value="Submit" class="btn btn-primary pull-right"/>
+    {{ form_end(proposal_form) }}
+{% endblock %}

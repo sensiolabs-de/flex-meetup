@@ -1,0 +1,9 @@
+{% for group in groups %}
+    {% if loop.first %}<ul>{% endif %}
+    <li>
+        <a href="{{ path('group', {'urlname': group.urlname}) }}">{{ group.name }}</a>
+    </li>
+    {% if loop.last %}</ul>{% endif %}
+{% else %}
+    <i>no groups</i>
+{% endfor %}

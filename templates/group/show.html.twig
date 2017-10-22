@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>{{ group.name }}</h1>
+    <p>{{ group.description|raw }}</p>
+    Members: {{ group.members }}
+{% endblock %}
+
+{% block additional_content %}
+    <h2>Upcoming Meetups</h2>
+    {{ render(controller('App\\Controller\\EventController::listAction', {'urlname': group.urlname})) }}
+{% endblock %}
+
+{% block sidebar %}
+    <h2>Interested in speaking?</h2>
+    <p>You have an interesting topic to talk about and want to share it with this group?</p>
+    <a href="{{ path('group_proposal', {'urlname': group.urlname}) }}" class="btn btn-primary">Talk Proposal</a>
+{% endblock %}
