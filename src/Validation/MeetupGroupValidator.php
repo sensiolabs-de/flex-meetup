@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace App\Validation;
 
-use App\Meetup\Client;
+use App\Meetup\ClientInterface;
 use App\Meetup\Exception\MeetupException;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
@@ -14,7 +14,7 @@ class MeetupGroupValidator extends ConstraintValidator
 {
     private $client;
 
-    public function __construct(Client $client)
+    public function __construct(ClientInterface $client)
     {
         $this->client = $client;
     }

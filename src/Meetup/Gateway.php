@@ -16,7 +16,7 @@ class Gateway
     private $manager;
     private $logger;
 
-    public function __construct(Client $client, ObjectManager $manager, LoggerInterface $logger)
+    public function __construct(ClientInterface $client, ObjectManager $manager, LoggerInterface $logger)
     {
         $this->client = $client;
         $this->manager = $manager;

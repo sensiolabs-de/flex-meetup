@@ -33,3 +33,11 @@ services:
     App\Meetup\Mailer:
         arguments:
             $adminMail: '%env(ADMIN_MAIL)%'
+
+    cache.api_client: '@cache.app'
+
+    App\Meetup\CachedClient:
+            decorates: App\Meetup\Client
+            arguments: ['@App\Meetup\CachedClient.inner', '@cache.api_client']
+
+    App\Meetup\ClientInterface: '@App\Meetup\CachedClient'

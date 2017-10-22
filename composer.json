@@ -8,6 +8,7 @@
         "php-http/curl-client": "^1.7",
         "php-http/httplug-bundle": "^1.7",
         "symfony/asset": "^3.4",
+        "symfony/cache": "^3.4",
         "symfony/console": "^3.4",
         "symfony/debug-pack": "^1.0",
         "symfony/flex": "^1.0",

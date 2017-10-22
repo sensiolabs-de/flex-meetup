@@ -13,7 +13,7 @@ use Http\Client\HttpClient;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Serializer\Exception\ExceptionInterface as SerializerException;
 
-class Client
+class Client implements ClientInterface
 {
     private $httpClient;
     private $serializer;
