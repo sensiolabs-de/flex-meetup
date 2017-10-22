@@ -60,7 +60,7 @@ class GroupController extends Controller
      */
     public function confirmRequestAction(GroupRequest $groupRequest): RedirectResponse
     {
-        // GroupRequest identified by token is being loaded via Doctrine using the DoctrineParamConverter
+        $groupRequest->setStatus(GroupRequest::STATUS_CONFIRMED);
 
         $this->getDoctrine()->getManager()->flush();
         $this->addFlash('success', 'Group request was confirmed and will be reviewed. This may take a few days.');

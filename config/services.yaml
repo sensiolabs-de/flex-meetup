@@ -1,6 +1,8 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    locale: 'en'
+    env(ADMIN_MAIL): 'denis.brumann@sensiolabs.de'
 
 services:
     # default configuration for services in *this* file
@@ -20,10 +22,14 @@ services:
         # you can exclude directories or files
         # but if a service is unused, it's removed anyway
         #exclude: '../src/{Entity,Migrations,Repository,Tests}'
-        exclude: '../src/{Command,Controller,Entity,Form,Meetup,Validation}'
+        exclude: '../src/{Entity}'
 
     # controllers are imported separately to make sure they
     # have the tag that allows actions to type-hint services
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    App\Meetup\Mailer:
+        arguments:
+            $adminMail: '%env(ADMIN_MAIL)%'

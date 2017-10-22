@@ -1,0 +1,16 @@
+httplug:
+    plugins:
+        redirect:
+            preserve_header: true
+
+    discovery:
+        client: 'auto'
+
+    clients:
+        app:
+            http_methods_client: true
+            plugins:
+                - 'httplug.plugin.logger'
+                - 'httplug.plugin.redirect'
+                - add_host:
+                      host: "https://api.meetup.com"
