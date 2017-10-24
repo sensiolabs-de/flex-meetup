@@ -9,6 +9,7 @@ use App\Meetup\Exception\GatewayException;
 use App\Meetup\Exception\MeetupException;
 use Doctrine\Common\Persistence\ObjectManager;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Gateway
 {
@@ -70,6 +71,15 @@ class Gateway
     public function getEventList(string $urlname = null): array
     {
         if (null !== $urlname) {
+            $groupRequest = $this->manager->getRepository(GroupRequest::class)->findBy([
+                'status' => 'approved',
+                'urlname' => $urlname,
+            ]);
+
+            if (null === $groupRequest) {
+                throw new NotFoundHttpException();
+            }
+
             return $this->client->getEventList($urlname);
         }
 
