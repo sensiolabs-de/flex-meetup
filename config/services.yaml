@@ -34,6 +34,8 @@ services:
         arguments:
             $adminMail: '%env(ADMIN_MAIL)%'
 
+    Symfony\Component\Serializer\Normalizer\PropertyNormalizer: ~
+
     cache.api_client: '@cache.app'
 
     App\Meetup\CachedClient:

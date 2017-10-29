@@ -29,7 +29,7 @@ framework:
                 confirm:
                     from: open
                     to: confirmed
-                approve:
+                approved:
                     from: confirmed
                     to: approved
                 reject:

@@ -114,7 +114,7 @@ class GroupRequestCommand extends ContainerAwareCommand
     {
         $transition = $this->io->choice(
             sprintf('What to do with "<comment>%s</comment>"?', $group->getUrlname()),
-            ['skip', 'approve', 'reject']
+            ['skip', 'approved', 'reject']
         );
 
         if ('skip' === $transition) {
