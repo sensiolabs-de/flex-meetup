@@ -7,6 +7,7 @@
         "guzzlehttp/psr7": "^1.4",
         "php-http/curl-client": "^1.7",
         "php-http/httplug-bundle": "^1.7",
+        "sensio/framework-extra-bundle": "^5.0",
         "symfony/asset": "^3.4",
         "symfony/cache": "^3.4",
         "symfony/console": "^3.4",
