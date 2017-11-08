@@ -105,13 +105,6 @@ class Gateway
 
     private function sortEvents(Event $a, Event $b): int
     {
-        if ($a->getTime() === $b->getTime()) {
-            return 0;
-        }
-        if ($a->getTime() < $b->getTime()) {
-            return -1;
-        }
-
-        return 1;
+        return $a->getTime() <=> $b->getTime();
     }
 }
