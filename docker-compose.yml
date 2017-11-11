@@ -1,20 +1,22 @@
 version: '3'
 
 services:
-  app:
-    container_name: meetup-app
-    build: .
+  php:
+    container_name: php
+    build:
+        context: ./docker/php
     links:
-      - db
-    ports:
-      - "80:80"
+      - mysql
+      - blackfire
     volumes:
-      - .:/opt/meetup:cached
+      - .:/opt/flex-meetup:cached
     environment:
-      DATABASE_URL: 'mysql://dbuser:dbpass@db/meetup'
+      - DATABASE_URL=mysql://dbuser:dbpass@mysql/meetup
+      - BLACKFIRE_CLIENT_ID
+      - BLACKFIRE_CLIENT_TOKEN
 
-  db:
-    container_name: meetup-db
+  mysql:
+    container_name: mysql
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
@@ -25,6 +27,24 @@ services:
       MYSQL_DATABASE: meetup
       MYSQL_USER: dbuser
       MYSQL_PASSWORD: dbpass
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./docker/nginx
+    volumes:
+      - .:/opt/flex-meetup:cached
+    links:
+      - php
+    ports:
+      - 80:80
+
+  blackfire:
+    container_name: blackfire
+    image: blackfire/blackfire
+    environment:
+      - BLACKFIRE_SERVER_ID
+      - BLACKFIRE_SERVER_TOKEN
 
 volumes:
   db_data:
