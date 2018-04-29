@@ -3,7 +3,3 @@ home:
     defaults:
         _controller: FrameworkBundle:Template:template
         template: home.html.twig
-
-app:
-    resource: ../src/Controller
-    type: annotation

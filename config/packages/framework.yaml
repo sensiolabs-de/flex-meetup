@@ -12,26 +12,3 @@ framework:
     #fragments: ~
     php_errors:
         log: true
-
-    workflows:
-        group_request:
-            type: workflow
-            marking_store:
-                type: single_state
-                arguments: [status]
-            supports: [App\Entity\GroupRequest]
-            places:
-                - open
-                - confirmed
-                - approved
-                - rejected
-            transitions:
-                confirm:
-                    from: open
-                    to: confirmed
-                approve:
-                    from: confirmed
-                    to: approved
-                reject:
-                    from: confirmed
-                    to: rejected

@@ -60,7 +60,7 @@ class GroupRequest
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank
-     * @Assert\Length(min=50)
+     * @Assert\Length(min=5, max=500)
      */
     private $comment = '';
 
