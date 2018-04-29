@@ -86,9 +86,6 @@
     "ocramius/proxy-manager": {
         "version": "2.2.0"
     },
-    "paragonie/random_compat": {
-        "version": "v2.0.12"
-    },
     "php-http/cache-plugin": {
         "version": "v1.5.0"
     },
@@ -159,9 +156,6 @@
         "version": "v3.4.8"
     },
     "symfony/cache": {
-        "version": "v3.4.8"
-    },
-    "symfony/class-loader": {
         "version": "v3.4.8"
     },
     "symfony/config": {
@@ -263,16 +257,13 @@
     "symfony/orm-pack": {
         "version": "v1.0.5"
     },
-    "symfony/polyfill-apcu": {
-        "version": "v1.7.0"
-    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.7.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.7.0"
     },
-    "symfony/polyfill-php70": {
+    "symfony/polyfill-php72": {
         "version": "v1.7.0"
     },
     "symfony/process": {
