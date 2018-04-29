@@ -15,7 +15,7 @@
         "symfony/flex": "^1.0",
         "symfony/form": "^3.4",
         "symfony/framework-bundle": "^3.4",
-        "symfony/lts": "^3",
+        "symfony/lts": "^4@dev",
         "symfony/options-resolver": "^3.4",
         "symfony/orm-pack": "^1.0",
         "symfony/serializer": "^3.4",
